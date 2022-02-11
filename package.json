@@ -1,0 +1,8 @@
+{
+  "name": "remindev",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/AhmadRezaAtaee/ReminDev.git",
+  "author": "AhmadRezaAtaee <ahmadr.ataee@gmail.com>",
+  "license": "MIT"
+}
