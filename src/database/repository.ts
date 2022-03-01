@@ -25,4 +25,10 @@ export class Repository<T extends Fields> {
     ) {
         this.database = option.sqliteDb || db
     }
+
+    get(id: number) {
+        const query = `SELECT * FROM ${this.table} WHERE id = @id`
+        return db.prepare(query).get({ id: id });
+    }
+
 }
