@@ -40,4 +40,10 @@ export class Repository<T extends Fields> {
         return db.prepare(query).get({ id: id });
     }
 
+    update(id: number, data: { [key in keyof T]?: any }) {
+        const query = `UPDATE ${this.table} SET 
+        ${Object.keys(data).map(key => key + ' = ' + data[key]).join(', ')} 
+        WHERE id = @id`
+        return db.prepare(query).run({ id: id });
+    }
 }
