@@ -46,4 +46,10 @@ export class Repository<T extends Fields> {
         WHERE id = @id`
         return db.prepare(query).run({ id: id });
     }
+
+    remove(id: number) {
+        const query = `DELETE FROM ${this.table} WHERE id = @id`
+        return db.prepare(query).run({ id: id });
+    }
+
 }
